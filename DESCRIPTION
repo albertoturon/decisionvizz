@@ -1,0 +1,22 @@
+Package: decisionvizz
+Type: Package
+Title: Create Visual Analysis of Multi-Actor Decision Making Processes
+Version: 0.2.0
+Author: Alberto Turón <turon@unizar.es>
+Maintainer: Alberto Turón <turon@unizar.es>
+Description: A series of routines to create visualizations of multi-actor decisions in the context of the e-Cognocracy (Moreno-Jiménez and Polasek, 2003).
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: R(>= 3.3)
+Imports:
+    stats,
+    graphics,
+    rgl,
+    plot3D,
+    plot3Drgl
+NeedsCompilation: no
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
