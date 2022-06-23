@@ -11,8 +11,6 @@
 #' @details This funcion creates the frame for a 3D ternary diagram. It is used by the functions that create 3D ternary diagrams.
 #' @author Alberto Turón \email{turon@@unizar.es}
 #' @seealso \code{\link{frame2d}, \link{frame2d_iso}, \link{frame3d_iso}}
-#' @examples
-#' \dontrun{frame3d("3D ternary diagram")}
 frame3d <- function(title=NULL, labels=c("A1","A2","A3","A4"),bg="white",valpha=0.7,zones=TRUE,lobes=TRUE,axes=TRUE,planes=FALSE) {
 
 #  bg3d(bg) # Setup the background color

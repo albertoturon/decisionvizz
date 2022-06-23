@@ -22,7 +22,7 @@
 #' data = data.frame(w1,w2,w3,w4,w5)
 #' mds_diagram(data)
 #' @export
-mds_diagram = function(data, title="MDS diagram",fill=TRUE,labels=NULL,color=c(1,2,4)) {
+mds_diagram = function(data, title=NULL,fill=TRUE,labels=NULL,color=c(1,2,4)) {
   nrow = nrow(data)
   nalt = ncol(data)
   ncol = 2*nalt

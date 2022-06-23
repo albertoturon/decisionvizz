@@ -7,6 +7,7 @@
 frame2d_iso(
   title = NULL,
   labels = c("A1", "A2", "A3"),
+  rad = rad,
   axes = TRUE,
   zones = TRUE,
   lobes = TRUE
@@ -16,6 +17,8 @@ frame2d_iso(
 \item{title}{is the title of the diagram}
 
 \item{labels}{are the labels of the three axes}
+
+\item{rad}{is a scale factor generic for the diagram}
 
 \item{axes}{indicates whether to draw the axes or not}
 
@@ -28,9 +31,6 @@ The function creates the frame for a 2D iso diagram.
 }
 \details{
 This function creates the frame for a 2D iso diagram. It is used by the functions that create 2D iso diagrams.
-}
-\examples{
-\dontrun{frame2d_iso("2D iso diagram")}
 }
 \seealso{
 \code{\link{frame2d}, \link{frame3d}, \link{frame3d_iso}}

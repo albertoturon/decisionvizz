@@ -8,65 +8,100 @@
 #' @details This function creates the frame for a 2D ternary diagram. It is used by the functions that create 2D ternary diagrams.
 #' @author Alberto Turón \email{turon@@unizar.es}
 #' @seealso \code{\link{frame2d_iso}, \link{frame3d}, \link{frame3d_iso}}
-#' @examples
-#' \dontrun{frame2d("2D ternary diagram")}
 frame2d <- function(title=NULL,labels=c("A1","A2","A3"),lobes=TRUE,zones=TRUE,axes=TRUE) {
+
+  graphics::plot(0, type="n", main="", xlab="", ylab="", frame.plot=FALSE, axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+
   if (axes == TRUE) {
+    O = ilr(c(0, 0, 0))
     a = ilr(c(1, 0, 0))
     b = ilr(c(0, 1, 0))
     c = ilr(c(0, 0, 1))
     x = c(a[1], b[1], c[1], a[1])
     y = c(a[2], b[2], c[2], a[2])
     graphics::par(new=TRUE)
-    plot(x,y, type="l", main=title, xlab="", ylab="", axes=FALSE, frame.plot=TRUE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    plot(x,y, type="l", main=title, xlab="", ylab="", axes=FALSE, frame.plot=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
 
-    graphics::text(a[1] + .04, a[2], labels = labels[1],  cex=1.0)
-    graphics::text(b[1] - .04, b[2], labels = labels[2],  cex=1.0)
-    graphics::text(c[1], c[2] + .04, labels = labels[3],   cex=1.0)
+    x = c(O[1], a[1])
+    y = c(O[2], a[2])
+    graphics::par(new=TRUE)
+    plot(x,y, type="l", xlab="", ylab="", axes=FALSE, frame.plot=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+
+    x = c(O[1], b[1])
+    y = c(O[2], b[2])
+    graphics::par(new=TRUE)
+    plot(x,y, type="l", xlab="", ylab="", axes=FALSE, frame.plot=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+
+    x = c(O[1], c[1])
+    y = c(O[2], c[2])
+    graphics::par(new=TRUE)
+    plot(x,y, type="l", xlab="", ylab="", axes=FALSE, frame.plot=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+
+    graphics::text(a[1] + .04, a[2], labels = labels[1],  cex=0.9)
+    graphics::text(b[1] - .04, b[2], labels = labels[2],  cex=0.9)
+    graphics::text(c[1], c[2] + .04, labels = labels[3],   cex=0.9)
   }
 
   if (lobes == TRUE) {
-    lobe = matrix(, nrow = 50, ncol = 3)
-    for (i in 1:50) {
+    lobe = matrix(, nrow = 100, ncol = 3)
+    for (i in 1:100) {
       lobe[i,] = ilr(clr_inv(ilr_inv(c((i-1)*sin(pi/6)/10,(i-1)*cos(pi/6)/10,-(i-1)*(sin(pi/6)+cos(pi/6))/10))))
     }
     graphics::par(new=TRUE)
-    plot(lobe[,1:2],type="l", col="#0000ff",xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    plot(lobe[,1:2],type="l", col=grDevices::adjustcolor("#8080ff", alpha=0.4),xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    x1 = lobe[,1]
+    y1 = lobe[,2]
 
-    lobe = matrix(, nrow = 50, ncol = 3)
-    for (i in 1:50) {
+    lobe = matrix(, nrow = 100, ncol = 3)
+    for (i in 1:100) {
       lobe[i,] = ilr(clr_inv(ilr_inv(c(-(i-1)*sin(pi/6)/10,(i-1)*cos(pi/6)/10,(i-1)*(sin(pi/6)-cos(pi/6))/10))))
     }
     graphics::par(new=TRUE)
-    plot(lobe[,1:2],type="l", col="#0000ff",xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    plot(lobe[,1:2],type="l", col=grDevices::adjustcolor("#8080ff", alpha=0.4),xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    x2 = lobe[,1]
+    y2 = lobe[,2]
 
-    lobe = matrix(, nrow = 50, ncol = 3)
-    for (i in 1:50) {
+    graphics::polygon(c(x2, rev(x1)), c(y2, rev(y1)), col = grDevices::adjustcolor("#8080ff", alpha=0.4), lty = 0)
+
+    lobe = matrix(, nrow = 100, ncol = 3)
+    for (i in 1:100) {
       lobe[i,] = ilr(clr_inv(ilr_inv(c(-(i-1)*sin(pi/6)/10,-(i-1)*cos(pi/6)/10,(i-1)*(sin(pi/6)+cos(pi/6))/10))))
     }
     graphics::par(new=TRUE)
-    plot(lobe[,1:2],type="l", col="#00ff00",xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    plot(lobe[,1:2],type="l", col=grDevices::adjustcolor("#80ff80", alpha=0.4),xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    x1 = lobe[,1]
+    y1 = lobe[,2]
 
-    lobe = matrix(, nrow = 50, ncol = 3)
-    for (i in 1:50) {
+    lobe = matrix(, nrow = 100, ncol = 3)
+    for (i in 1:100) {
       lobe[i,] = ilr(clr_inv(ilr_inv(c(-(i-1)/10,0,(i-1)/10))))
     }
     graphics::par(new=TRUE)
-    plot(lobe[,1:2],type="l", col="#00ff00",xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    plot(lobe[,1:2],type="l", col=grDevices::adjustcolor("#80ff80", alpha=0.4),xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    x2 = lobe[,1]
+    y2 = lobe[,2]
 
-    lobe = matrix(, nrow = 50, ncol = 3)
-    for (i in 1:50) {
+    graphics::polygon(c(x1, rev(x2)), c(y1, rev(y2)), col = grDevices::adjustcolor("#80ff80", alpha=0.4), lty = 0)
+
+    lobe = matrix(, nrow = 100, ncol = 3)
+    for (i in 1:100) {
       lobe[i,] = ilr(clr_inv(ilr_inv(c((i-1)*sin(pi/6)/10,-(i-1)*cos(pi/6)/10,(i-1)*(-sin(pi/6)+cos(pi/6))/10))))
     }
     graphics::par(new=TRUE)
-    plot(lobe[,1:2],type="l", col="#ff0000",xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    plot(lobe[,1:2],type="l", col=grDevices::adjustcolor("#ff8080", alpha=0.4),xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    x1 = lobe[,1]
+    y1 = lobe[,2]
 
-    lobe = matrix(, nrow = 50, ncol = 3)
-    for (i in 1:50) {
+    lobe = matrix(, nrow = 100, ncol = 3)
+    for (i in 1:100) {
       lobe[i,] = ilr(clr_inv(ilr_inv(c((i-1)/10,0,-(i-1)/10))))
     }
     graphics::par(new=TRUE)
-    plot(lobe[,1:2],type="l", col="#ff0000",xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    plot(lobe[,1:2],type="l", col=grDevices::adjustcolor("#ff8080", alpha=0.4),xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85))
+    x2 = lobe[,1]
+    y2 = lobe[,2]
+
+    graphics::polygon(c(x1, rev(x2)), c(y1, rev(y2)), col = grDevices::adjustcolor("#ff8080", alpha=0.4), lty = 0)
   }
 
   if (zones == TRUE) {

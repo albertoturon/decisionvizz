@@ -6,7 +6,7 @@
 \usage{
 iso_diagram_3d_2r(
   data,
-  title = "Ternary diagram",
+  title = NULL,
   labels = NULL,
   lines = FALSE,
   color = c(2, 4, 6),

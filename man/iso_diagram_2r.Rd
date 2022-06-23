@@ -9,10 +9,11 @@ iso_diagram_2r(
   labels = NULL,
   lines = FALSE,
   color = c(2, 4, 6),
-  title = "Isometric diagram",
+  title = NULL,
   axes = TRUE,
   zones = TRUE,
-  lobes = TRUE
+  lobes = TRUE,
+  dens = NULL
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ iso_diagram_2r(
 \item{zones}{indicates whether to draw the zones or not}
 
 \item{lobes}{indicates whether to draw the lobes or not}
+
+\item{dens}{is a vector with the weights to scale round 2 according to reputation or not}
 }
 \description{
 Isometric 2d diagram of two rounds

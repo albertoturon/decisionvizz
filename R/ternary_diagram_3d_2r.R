@@ -35,7 +35,7 @@
 #' ternary_diagram_3d_2r(data,lobes=FALSE)
 #' ternary_diagram_3d_2r(data,lines=TRUE)
 #' @export
-ternary_diagram_3d_2r = function(data,title="Ternary diagram",labels=NULL,lines=FALSE,pov=0,valpha=0.7,dens=NULL,zones=TRUE,lobes=TRUE,axes=TRUE,color=c(2,4,6)) {
+ternary_diagram_3d_2r = function(data,title=NULL,labels=NULL,lines=FALSE,pov=0,valpha=0.7,dens=NULL,zones=TRUE,lobes=TRUE,axes=TRUE,color=c(2,4,6)) {
 
   Rad=0.02
 

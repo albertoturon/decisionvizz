@@ -30,20 +30,22 @@
 #' ternary_diagram_2r(data,labels=dm)
 #' ternary_diagram_2r(data,lines=TRUE)
 #' @export
-ternary_diagram_2r = function(data,labels=NULL,lines=FALSE,color=c(2,4,6),title="Ternary diagram",lobes=TRUE,zones=TRUE,axes=TRUE,dens=NULL) {
+ternary_diagram_2r = function(data,labels=NULL,lines=FALSE,color=c(2,4,6),title=NULL,lobes=TRUE,zones=TRUE,axes=TRUE,dens=NULL) {
+
+  graphics::plot.new()
+  frame2d(title,lobes=lobes,zones=zones,axes=axes)
 
   numrows = nrow(data)
-#  numcols = dim(data)[8]
 
   data_t1 <- matrix(, nrow = numrows, ncol = 3)
   data_t2 <- matrix(, nrow = numrows, ncol = 3)
-
-#  scales <- data[,8]*5
 
   for (i in 1:numrows) {
     data_t1[i,] = ilr(as.double(c(data[i,1],data[i,2],data[i,3])))
     data_t2[i,] = ilr(as.double(c(data[i,4],data[i,5],data[i,6])))
   }
+
+  graphics::par(new=TRUE)
 
   plot(data_t1[,1:2],type="p", col=1,xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85), pch=21, bg=color[1])
   graphics::par(new=TRUE)
@@ -53,8 +55,8 @@ else
   plot(data_t2[,1:2],type="p", col=1,xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85), pch=21, bg=color[2],cex=dens)
 
   if (!is.null(labels)) {
-    graphics::text(data_t1[,1:2],labels=labels, cex=.7)
-    graphics::text(data_t2[,1:2],labels=labels, cex=.7)
+    graphics::text(data_t1[,1:2]+c(0.06,0.06),labels=labels, cex=.7)
+    graphics::text(data_t2[,1:2]+c(0.06,0.06),labels=labels, cex=.7)
   }
 
   if (lines) {
@@ -76,6 +78,6 @@ else
     }
   }
 
-  frame2d(title,lobes=lobes,zones=zones,axes=axes)
+#  frame2d(title,lobes=lobes,zones=zones,axes=axes)
   graphics::legend(1.35,2.50,c("Round 1","Round 2"), pch=21, col=color[1], pt.bg=color, cex=0.7)
 }

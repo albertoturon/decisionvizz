@@ -29,7 +29,7 @@
 #' ternary_diagram_3d(data,lobes=FALSE)
 #' ternary_diagram_3d(data,pov=2)
 #' @export
-ternary_diagram_3d = function(data, title="Ternary diagram",labels=NULL, pov=0,valpha=0.7,zones=TRUE,lobes=TRUE,axes=TRUE,color=2,planes = FALSE) {
+ternary_diagram_3d = function(data, title=NULL,labels=NULL, pov=0,valpha=0.7,zones=TRUE,lobes=TRUE,axes=TRUE,color=2,planes = FALSE) {
 
   Rad=0.02
   rgl::open3d()

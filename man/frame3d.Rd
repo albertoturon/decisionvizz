@@ -38,9 +38,6 @@ The funcion creates the frame for a 3D ternary diagram.
 \details{
 This funcion creates the frame for a 3D ternary diagram. It is used by the functions that create 3D ternary diagrams.
 }
-\examples{
-\dontrun{frame3d("3D ternary diagram")}
-}
 \seealso{
 \code{\link{frame2d}, \link{frame2d_iso}, \link{frame3d_iso}}
 }

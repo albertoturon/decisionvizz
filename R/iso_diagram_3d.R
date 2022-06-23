@@ -28,7 +28,7 @@
 #' iso_diagram_3d(data,lobes=FALSE)
 #' iso_diagram_3d(data,axes=FALSE)
 #' @export
-iso_diagram_3d = function(data,title="Ternary diagram",labels=NULL,color=2,valpha=0.7,pov=0,zones=TRUE,lobes=TRUE,axes=TRUE) {
+iso_diagram_3d = function(data,title=NULL,labels=NULL,color=2,valpha=0.7,pov=0,zones=TRUE,lobes=TRUE,axes=TRUE) {
 
   Rad = 0.02
   rgl::open3d()

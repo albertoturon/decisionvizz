@@ -35,9 +35,6 @@ The function creates the frame for a 3D iso diagram.
 \details{
 This function creates the frame for a 3D iso diagram. It is used by the functions that create 3D iso diagrams.
 }
-\examples{
-\dontrun{frame3d_iso("3D iso diagram")}
-}
 \seealso{
 \code{\link{frame2d}, \link{frame2d_iso}, \link{frame3d}}
 }

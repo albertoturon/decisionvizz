@@ -6,7 +6,7 @@
 \usage{
 iso_diagram_3d(
   data,
-  title = "Ternary diagram",
+  title = NULL,
   labels = NULL,
   color = 2,
   valpha = 0.7,

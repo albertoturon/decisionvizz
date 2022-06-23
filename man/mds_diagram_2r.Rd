@@ -6,7 +6,7 @@
 \usage{
 mds_diagram_2r(
   data,
-  title = "MDS diagram",
+  title = NULL,
   fill = TRUE,
   lines = FALSE,
   labels = NULL,

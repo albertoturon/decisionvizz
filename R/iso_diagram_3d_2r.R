@@ -33,7 +33,7 @@
 #' iso_diagram_3d_2r(data,lobes=FALSE)
 #' iso_diagram_3d_2r(data,axes=FALSE)
 #' @export
-iso_diagram_3d_2r = function(data,title="Ternary diagram",labels=NULL,lines=FALSE,color=c(2,4,6),valpha=0.7,pov=0,zones=TRUE,lobes=TRUE,axes=TRUE) {
+iso_diagram_3d_2r = function(data,title=NULL,labels=NULL,lines=FALSE,color=c(2,4,6),valpha=0.7,pov=0,zones=TRUE,lobes=TRUE,axes=TRUE) {
 
   Rad = 0.02
 

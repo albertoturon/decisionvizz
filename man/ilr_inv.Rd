@@ -15,9 +15,6 @@ The function returns the inverse 2d isometric log-ratio tranform of a vector \co
 \details{
 This function computes the inverse 2d isometric log-ratio transform of a vector \code{v}. It is used by the functions that create iso-diagrams.
 }
-\examples{
-\dontrun{ilr_inv(c(3,0,-2))}
-}
 \references{
 Aitchison, J. (1986) The Statistical Analysis of Compositional Data, Monographs on Statistics and Applied Probability. Chapman & Hall Ltd., London (UK). 416p.
 }

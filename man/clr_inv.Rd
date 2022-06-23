@@ -13,11 +13,7 @@ clr_inv(v)
 The function returns the inverse centered log-ratio transform of a vector \code{v}.
 }
 \details{
-This function computes the inverse centered log-ratio transform of a vector \code{v}. It is used by the functions that
-create iso-diagrams.
-}
-\examples{
-\dontrun{clr_inv(c(3,3,1,2))}
+This function computes the inverse centered log-ratio transform of a vector \code{v}. It is used by the functions that create iso-diagrams.
 }
 \references{
 Aitchison, J. (1986) The Statistical Analysis of Compositional Data, Monographs on Statistics and Applied Probability. Chapman & Hall Ltd., London (UK). 416p.

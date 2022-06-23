@@ -15,9 +15,6 @@ The function returns the 3d isometric log-ratio transform of a vector \code{v}.
 \details{
 This function computes the 3d isomentric log-ratio transform of a vector \code{v}. It is used by the functions that create iso-diagrams.
 }
-\examples{
-\dontrun{ilr3d(c(3,1,-2,2))}
-}
 \references{
 Aitchison, J. (1986) The Statistical Analysis of Compositional Data, Monographs on Statistics and Applied Probability. Chapman & Hall Ltd., London (UK). 416p.
 }

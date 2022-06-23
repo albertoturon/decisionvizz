@@ -10,8 +10,6 @@
 #' @details This function creates the frame for a 3D iso diagram. It is used by the functions that create 3D iso diagrams.
 #' @author Alberto Turón \email{turon@@unizar.es}
 #' @seealso \code{\link{frame2d}, \link{frame2d_iso}, \link{frame3d}}
-#' @examples
-#' \dontrun{frame3d_iso("3D iso diagram")}
 frame3d_iso <- function(title=NULL, labels=c("A1","A2","A3","A4"),pov=0,valpha=0.7,zones=TRUE,lobes=TRUE,axes=TRUE) {
 
   res = 50

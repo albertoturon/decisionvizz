@@ -4,13 +4,7 @@
 \alias{mds_diagram}
 \title{Multidimensional scaling diagram}
 \usage{
-mds_diagram(
-  data,
-  title = "MDS diagram",
-  fill = TRUE,
-  labels = NULL,
-  color = c(1, 2, 4)
-)
+mds_diagram(data, title = NULL, fill = TRUE, labels = NULL, color = c(1, 2, 4))
 }
 \arguments{
 \item{data}{is the set of preference structures of each decision maker}

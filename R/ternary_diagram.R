@@ -26,7 +26,10 @@
 #' ternary_diagram(data,labels=dm)
 #' ternary_diagram(data,lobes=FALSE)
 #' @export
-ternary_diagram = function(data, labels=NULL, color=2,dens=NULL,title="Ternary diagram",lobes=TRUE,zones=TRUE,axes=TRUE) {
+ternary_diagram = function(data, labels=NULL, color=2,dens=NULL,title=NULL,lobes=TRUE,zones=TRUE,axes=TRUE) {
+
+  graphics::plot.new()
+  frame2d(title,lobes=lobes,zones=zones,axes=axes)
 
   numrows = nrow(data)
   data_t <- matrix(, nrow = numrows, ncol = 3)
@@ -34,13 +37,13 @@ ternary_diagram = function(data, labels=NULL, color=2,dens=NULL,title="Ternary d
   for (i in 1:numrows)
     data_t[i,] = ilr(as.double(data[i,]))
 
+  graphics::par(new=TRUE)
+
   if (is.null(dens))
     plot(data_t[,1:2],type="p", col=1,xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85), pch=21, bg=color)
   else
     plot(data_t[,1:2],type="p", col=1,xlab="",ylab="", axes=FALSE, xlim=c(-0.75,0.75), ylim=c(-0.4,0.85), pch=21, bg=color, cex = 1+dens)
 
   if (!is.null(labels))
-    graphics::text(data_t[,1:2],labels=labels, cex=.7)
-
-  frame2d(title,lobes=lobes,zones=zones,axes=axes)
+    graphics::text(data_t[,1:2]+c(0.06,0.06),labels=labels, cex=.7)
 }

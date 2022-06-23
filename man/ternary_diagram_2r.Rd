@@ -9,7 +9,7 @@ ternary_diagram_2r(
   labels = NULL,
   lines = FALSE,
   color = c(2, 4, 6),
-  title = "Ternary diagram",
+  title = NULL,
   lobes = TRUE,
   zones = TRUE,
   axes = TRUE,

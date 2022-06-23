@@ -6,7 +6,7 @@
 \usage{
 ternary_diagram_3d_2r(
   data,
-  title = "Ternary diagram",
+  title = NULL,
   labels = NULL,
   lines = FALSE,
   pov = 0,

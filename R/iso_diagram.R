@@ -25,7 +25,12 @@
 #' iso_diagram(data,lobes=FALSE)
 #' iso_diagram(data,axes=FALSE)
 #' @export
-iso_diagram <- function(data,labels=NULL,color=2,title="Isometric diagram",axes=TRUE,zones=TRUE,lobes=TRUE) {
+iso_diagram <- function(data,labels=NULL,color=2,title=NULL,axes=TRUE,zones=TRUE,lobes=TRUE) {
+
+  graphics::plot.new()
+  rad=2
+  frame2d_iso(title,axes=axes,zones=zones,lobes=lobes,rad=rad)
+
   numrows = nrow(data)
   w1[] = data[,1]
   w2[] = data[,2]
@@ -33,12 +38,12 @@ iso_diagram <- function(data,labels=NULL,color=2,title="Isometric diagram",axes=
   data_t <- matrix(, nrow = numrows, ncol = 3)
 
   for (i in 1:numrows)
-    data_t[i,]=ilr(c(w1[i],w2[i],w3[i]))
+    data_t[i,]=rad*ilr(c(w1[i],w2[i],w3[i]))
+
+  graphics::par(new=TRUE)
 
   plot(data_t[,1:2],type="p", col=1,xlab="",ylab="", axes=FALSE, frame.plot=FALSE, xlim=c(-3,3), ylim=c(-3,3), pch=21, bg=color)
 
   if (!is.null(labels))
-    graphics::text(data_t[,1:2],labels=labels, cex=.7)
-
-  frame2d_iso(title,axes=axes,zones=zones,lobes=lobes)
+    graphics::text(data_t[,1:2]+c(0.2,0.2),labels=labels, cex=.7)
 }

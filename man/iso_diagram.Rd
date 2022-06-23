@@ -8,7 +8,7 @@ iso_diagram(
   data,
   labels = NULL,
   color = 2,
-  title = "Isometric diagram",
+  title = NULL,
   axes = TRUE,
   zones = TRUE,
   lobes = TRUE

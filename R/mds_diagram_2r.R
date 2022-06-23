@@ -29,7 +29,7 @@
 #' mds_diagram_2r(data)
 #' mds_diagram_2r(data,labels=dm)
 #' @export
-mds_diagram_2r = function(data, title="MDS diagram",fill=TRUE,lines=FALSE,labels=NULL,color=c(1,2,4,"#ff99ff")) {
+mds_diagram_2r = function(data, title=NULL,fill=TRUE,lines=FALSE,labels=NULL,color=c(1,2,4,"#ff99ff")) {
   nrow = nrow(data)
   nalt = ncol(data)/2
   ncol = 2*nalt
